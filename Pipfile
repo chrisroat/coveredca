@@ -8,8 +8,8 @@ pyarrow = "*"
 pandas = "*"
 selenium = "*"
 regex = "*"
-jupyterlab = "*"
 seaborn = "*"
+jupyterlab = "*"
 
 [dev-packages]
 
