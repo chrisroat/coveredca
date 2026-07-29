@@ -1,0 +1,25 @@
+[project]
+name = "coveredca"
+version = "0.1.0"
+description = "Analysis of Covered CA plans"
+requires-python = ">=3.13"
+readme = "README.md"
+dependencies = [
+    "pyarrow",
+    "pandas",
+    "selenium",
+    "regex",
+    "seaborn",
+    "jupyterlab",
+]
+
+[dependency-groups]
+dev = []
+
+[tool.uv]
+package = false
+default-groups = "all"
+
+[[tool.uv.index]]
+name = "pypi"
+url = "https://pypi.org/simple"

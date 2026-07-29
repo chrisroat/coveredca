@@ -4,7 +4,7 @@ df = pd.read_parquet("output/clean_data.pq")
 
 plan_keys = [
     "insurance",
-    "metal",
+    "Health Plan Category",
     "hdhp",
     "plan_qualifier",
     "plan_type",
@@ -17,7 +17,7 @@ plan_use_cols = [
     "outpatient_visits",
 ]
 metal_keys = [
-    "metal",
+    "Health Plan Category",
     "hdhp",
 ]
 metal_cols = [
@@ -41,6 +41,6 @@ def process(keys, cols, name):
 
 process(plan_keys, ["premium_value"] + care_cols, "plan")
 process(metal_keys, metal_cols, "metal")
-process(plan_keys, ["plan_use", "prescription_use", "health_plan_use"], "cost")
+process(plan_keys, ["Healthcare Usage", "prescription_use", "Out-of-Pocket Costs (Non-Premium)"], "cost")
 process(["prescription_use"], ["num_generic_scripts"], "prescription_use")
-process(["plan_use"], plan_use_cols, "plan_use")
+process(["Healthcare Usage"], plan_use_cols, "plan_use")
